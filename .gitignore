@@ -1,0 +1,18 @@
+# Large binary inputs — never commit to git.
+# These should come from release artifacts / LFS / fleet NFS at build time.
+assets/cix-debs/*.deb
+assets/kernel/Image-cixmini.bin
+assets/kernel/modules-cixmini.tgz
+assets/kernel/*.bin
+assets/kernel/*.tgz
+
+# Build artifacts
+*.img
+*.img.gz
+*.wic
+*.wic.gz
+
+# Editor cruft
+.DS_Store
+*.swp
+*~
