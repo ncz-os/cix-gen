@@ -1,0 +1,9 @@
+stages: [check]
+shellcheck:
+  stage: check
+  image: koalaman/shellcheck-alpine:stable
+  script:
+    - files=$(find . -type f -name "*.sh" -not -path "./.git/*"); if [ -z "$files" ]; then echo "no .sh files"; exit 0; fi; echo "$files" | xargs shellcheck -S error
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_PIPELINE_SOURCE == "push"'
