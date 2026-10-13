@@ -54,7 +54,7 @@ DEBIAN_SUITE="bookworm"
 DEBIAN_MIRROR="http://deb.debian.org/debian"
 HOSTNAME="cixmini"
 NCZ_USER="ncz"
-NCZ_PASSWORD="changeme"
+NCZ_PASSWORD="${NCZ_PASSWORD:?set NCZ_PASSWORD in the environment}"
 SKIP_WIPE=0
 
 # ------------------------------------------------------------------------
